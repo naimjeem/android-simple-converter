@@ -9,11 +9,18 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
   public void convert(View view) {
-    EditText
+    EditText currencyValue = findViewById(R.id.currecncyInput);
+    Double USD = Double.parseDouble(currencyValue.getText().toString());
+    Double GBP = USD * 0.65;
+    Double BDT = USD * 79;
+
+    Snackbar.make(view, "BDT: " + BDT + " Taka" + "\n" + "GBP: " + GBP + " Pound", Snackbar.LENGTH_LONG)
+            .setAction("Action", null).show();
   }
 
   @Override
